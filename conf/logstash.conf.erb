@@ -17,7 +17,8 @@ output {
 <% if ENV['OPENSHIFT_LOGSTASH_ES_PASSWORD'] %>
         password => "<%= ENV['OPENSHIFT_LOGSTASH_ES_PASSWORD'] %>"
 <% end %>
-        manage_template => true
+        # Assume the cluster has a reasonable template. Surely not to be managed separately by ever single cartridge.
+        manage_template => false
     }
 
 }
